@@ -32,7 +32,7 @@
         }
         
         .logo {
-            max-width: 70%;
+            max-width: 40%;  /* Уменьшен размер логотипа с 70% до 40% */
             margin: 20px auto;
             filter: drop-shadow(0 0 10px #ff0066);
         }
@@ -116,6 +116,8 @@
             width: 100%;
             height: auto;
             border: 1px solid #990033;
+            box-sizing: border-box; /* Добавлено, чтобы рамка учитывалась в общем размере */
+            display: block; /* Убирает проблемы с пустым пространством */
         }
         
         .feature-item h3 {
@@ -272,12 +274,13 @@
             pointer-events: none;
         }
         
-        /* VHS эффект для изображений */
+        /* VHS эффект для изображений - закомментирован */
         .vhs-effect {
             position: relative;
             overflow: hidden;
         }
         
+        /* Закомментирован бегущий эффект
         .vhs-effect::before {
             content: "";
             position: absolute;
@@ -295,6 +298,7 @@
             0% { top: -5px; }
             100% { top: 100%; }
         }
+        */
         
         /* Additional styling for quotes */
         blockquote {
@@ -370,7 +374,7 @@
         <section id="featured-film">
             <h2>NEW EXCLUSIVE RELEASE</h2>
             <div class="vhs-effect">
-                <img src="images/films/featured.png" alt="The Astarion Chronicles" style="max-width:100%;">
+                <img src="images/films/featured.png" alt="The Astarion Chronicles" style="max-width:100%; display: block; margin: 0 auto; border: 1px solid #990033; box-sizing: border-box;">
             </div>
             <h3>"THE ASTARION CHRONICLES: INCEPTION OF NARCISSISM"</h3>
             <p>The visionary auteur's most daring creation yet. A revolutionary film that blurs the line between creator and creation, art and artist, genius and madness.</p>
@@ -446,7 +450,7 @@
             
             <div style="text-align: center; margin-bottom: 40px;">
                 <div class="vhs-effect" style="display: inline-block; max-width: 400px;">
-                    <img src="images/crew/astarion.png" alt="Astarion" style="width: 100%; border: 3px solid #ff0066;">
+                    <img src="images/crew/astarion.png" alt="Astarion" style="width: 100%; border: 3px solid #ff0066; box-sizing: border-box; display: block;">
                 </div>
                 <h3 style="font-size: 1.8em; margin-top: 15px;">ASTARION</h3>
                 <p style="font-size: 1.2em; color: #ff0066; margin-bottom: 5px;">Visionary Director, Producer, Star</p>
@@ -516,7 +520,7 @@
         <section id="about">
             <h2>ABOUT THE STUDIO</h2>
             <div class="vhs-effect">
-                <img src="images/studio.png" alt="Crimson Ecstasy Studios" style="max-width:100%; margin-bottom:20px;">
+                <img src="images/studio.png" alt="Crimson Ecstasy Studios" style="max-width:100%; margin-bottom:20px; display: block; margin: 0 auto 20px; border: 1px solid #990033; box-sizing: border-box;">
             </div>
             <p>Founded in 2020, Crimson Ecstasy Productions emerged from Astarion's vision to transform adult cinema into legitimate art. Headquartered in a deconsecrated Gothic revival cathedral (acquired through means that studio lawyers have advised us not to disclose), our production house has quickly gained notoriety for pushing boundaries between the erotic and the existential.</p>
             <p>Our aesthetic philosophy centers on what Astarion calls "The Crimson Principle" — the belief that true desire exists in the tension between fear and fascination. All our films explore this delicate balance, creating experiences that are simultaneously arousing and unnerving.</p>
