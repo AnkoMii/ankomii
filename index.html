@@ -7,7 +7,7 @@
     <style>
         body {
             background-color: #000;
-            background-image: url('/api/placeholder/1200/800');
+            background-image: url("images/background.jpg");
             background-position: center top;
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -295,13 +295,58 @@
             0% { top: -5px; }
             100% { top: 100%; }
         }
+        
+        /* Additional styling for quotes */
+        blockquote {
+            border-left: 3px solid #990033;
+            padding-left: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            color: #ffcccc;
+        }
+        
+        /* Add a special section for Astarion's thoughts */
+        .astarion-thoughts {
+            position: relative;
+            background-color: rgba(153, 0, 51, 0.2);
+            border: 1px solid #990033;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .astarion-thoughts:before {
+            content: "";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 30px;
+            background-color: #000;
+            border: 1px solid #990033;
+            z-index: 1;
+        }
+        
+        .astarion-thoughts:after {
+            content: "DIRECTOR'S VISION";
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #000;
+            padding: 0 10px;
+            color: #ff0066;
+            font-size: 0.9em;
+            z-index: 2;
+        }
     </style>
 </head>
 <body>
     <div class="noise"></div>
     <div class="container">
         <header>
-            <img src="/api/placeholder/500/200" alt="Crimson Ecstasy Productions Logo" class="logo">
+            <img src="images/logo.png" alt="Crimson Ecstasy Productions Logo" class="logo">
             <h1 class="blink">CRIMSON ECSTASY PRODUCTIONS</h1>
             <p>"Art is all about layers. Like an onion, but significantly better dressed." - Astarion</p>
         </header>
@@ -325,7 +370,7 @@
         <section id="featured-film">
             <h2>NEW EXCLUSIVE RELEASE</h2>
             <div class="vhs-effect">
-                <img src="/api/placeholder/800/400" alt="The Astarion Chronicles" style="max-width:100%;">
+                <img src="images/films/featured.png" alt="The Astarion Chronicles" style="max-width:100%;">
             </div>
             <h3>"THE ASTARION CHRONICLES: INCEPTION OF NARCISSISM"</h3>
             <p>The visionary auteur's most daring creation yet. A revolutionary film that blurs the line between creator and creation, art and artist, genius and madness.</p>
@@ -339,7 +384,7 @@
             <div class="featured">
                 <div class="feature-item">
                     <div class="vhs-effect">
-                        <img src="/api/placeholder/280/180" alt="Film 1">
+                        <img src="images/films/film1.png" alt="Film 1">
                         <span class="new-banner">HIT!</span>
                     </div>
                     <h3>Moonlit Confessions</h3>
@@ -350,7 +395,7 @@
                 
                 <div class="feature-item">
                     <div class="vhs-effect">
-                        <img src="/api/placeholder/280/180" alt="Film 2">
+                        <img src="images/films/film2.png" alt="Film 2">
                     </div>
                     <h3>Blood & Velvet</h3>
                     <p>In the shadow world of aristocratic debauchery, a mysterious stranger brings both ecstasy and terror to a decadent masquerade.</p>
@@ -360,7 +405,7 @@
                 
                 <div class="feature-item">
                     <div class="vhs-effect">
-                        <img src="/api/placeholder/280/180" alt="Film 3">
+                        <img src="images/films/film3.png" alt="Film 3">
                     </div>
                     <h3>Midnight Rituals</h3>
                     <p>When pleasure becomes worship and desire becomes devotion. A controversial exploration of ecstasy as transcendence.</p>
@@ -398,10 +443,21 @@
         
         <section id="crew">
             <h2>ASTARION'S CREW</h2>
+            
+            <div style="text-align: center; margin-bottom: 40px;">
+                <div class="vhs-effect" style="display: inline-block; max-width: 400px;">
+                    <img src="images/crew/astarion.png" alt="Astarion" style="width: 100%; border: 3px solid #ff0066;">
+                </div>
+                <h3 style="font-size: 1.8em; margin-top: 15px;">ASTARION</h3>
+                <p style="font-size: 1.2em; color: #ff0066; margin-bottom: 5px;">Visionary Director, Producer, Star</p>
+                <p style="max-width: 600px; margin: 0 auto; text-align: left; color: #ffcccc;">The creative force behind Crimson Ecstasy Productions. A perfectionist with an unerring eye for beauty in its most raw and authentic forms. Refuses to be photographed eating. Has been described by colleagues as "magnificently unbearable" and "a megalomaniac unicorn." Known for his dramatic entrances, which are choreographed by a full-time "Entrance Coordinator."</p>
+                <p style="text-align: left; margin: 10px auto; max-width: 600px;"><i>"I'm not interested in mere pornography—I'm creating carnal philosophy. Each orgasm captured on film is, in its way, an existential revelation."</i></p>
+            </div>
+            
             <div class="featured">
                 <div class="feature-item">
                     <div class="vhs-effect">
-                        <img src="/api/placeholder/280/280" alt="Shadowheart">
+                        <img src="images/crew/shadowheart.png" alt="Shadowheart">
                     </div>
                     <h3>Shadowheart</h3>
                     <p>Makeup & Visual Design. Known for her meticulous attention to detail and avant-garde aesthetic sensibilities. Has never been seen wearing any color other than black.</p>
@@ -410,7 +466,7 @@
                 
                 <div class="feature-item">
                     <div class="vhs-effect">
-                        <img src="/api/placeholder/280/280" alt="Tav">
+                        <img src="images/crew/tav.png" alt="Tav">
                     </div>
                     <h3>Tav</h3>
                     <p>Cinematographer. Award-winning camera operator with an uncanny ability to capture moments of authentic vulnerability. Has been known to laugh at inappropriate times.</p>
@@ -419,7 +475,7 @@
                 
                 <div class="feature-item">
                     <div class="vhs-effect">
-                        <img src="/api/placeholder/280/280" alt="Karlach">
+                        <img src="images/crew/karlach.png" alt="Karlach">
                     </div>
                     <h3>Karlach</h3>
                     <p>Technical Director. Masters in Electrical Engineering with a minor in Destruction. Handles all equipment with a curious mix of precision and barely contained violence.</p>
@@ -430,7 +486,7 @@
             <div class="featured">
                 <div class="feature-item">
                     <div class="vhs-effect">
-                        <img src="/api/placeholder/280/280" alt="Gale">
+                        <img src="images/crew/gale.png" alt="Gale">
                     </div>
                     <h3>Gale</h3>
                     <p>Assistant Director. Former philosophy professor who abandoned academia when he discovered that adult cinema offered "more authentic existential insights." Approaches each shoot as a metaphysical experiment.</p>
@@ -439,7 +495,7 @@
                 
                 <div class="feature-item">
                     <div class="vhs-effect">
-                        <img src="/api/placeholder/280/280" alt="Wyll">
+                        <img src="images/crew/wyll.png" alt="Wyll">
                     </div>
                     <h3>Wyll</h3>
                     <p>Production Manager. The only member of the team who actually understands spreadsheets. Maintains his sanity through meticulous organization and private screaming sessions in the supply closet.</p>
@@ -448,7 +504,7 @@
                 
                 <div class="feature-item">
                     <div class="vhs-effect">
-                        <img src="/api/placeholder/280/280" alt="Lae'zel">
+                        <img src="images/crew/laezel.png" alt="Lae'zel">
                     </div>
                     <h3>Lae'zel</h3>
                     <p>Movement Director. Former military choreographer who approaches intimate scenes with tactical precision. Has been known to use battlefield terminology during direction.</p>
@@ -460,7 +516,7 @@
         <section id="about">
             <h2>ABOUT THE STUDIO</h2>
             <div class="vhs-effect">
-                <img src="/api/placeholder/600/300" alt="Crimson Ecstasy Studios" style="max-width:100%; margin-bottom:20px;">
+                <img src="images/studio.png" alt="Crimson Ecstasy Studios" style="max-width:100%; margin-bottom:20px;">
             </div>
             <p>Founded in 2020, Crimson Ecstasy Productions emerged from Astarion's vision to transform adult cinema into legitimate art. Headquartered in a deconsecrated Gothic revival cathedral (acquired through means that studio lawyers have advised us not to disclose), our production house has quickly gained notoriety for pushing boundaries between the erotic and the existential.</p>
             <p>Our aesthetic philosophy centers on what Astarion calls "The Crimson Principle" — the belief that true desire exists in the tension between fear and fascination. All our films explore this delicate balance, creating experiences that are simultaneously arousing and unnerving.</p>
