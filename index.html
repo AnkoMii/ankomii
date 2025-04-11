@@ -19,6 +19,49 @@
             position: relative;
         }
         
+        .news-toggle {
+            display: none; /* Скрыть чекбокс */
+        }
+        
+        .news-toggle + label {
+            display: inline-block;
+            background-color: #990033;
+            color: white;
+            padding: 8px 15px;
+            margin-top: 10px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .news-toggle + label:hover {
+            background-color: #ff0066;
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .news-toggle ~ .extended-content {
+            display: none;
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px dotted #660022;
+        }
+        
+        .news-toggle:checked ~ .extended-content {
+            display: block;
+        }
+        
+        .news-toggle:checked + label:after {
+            content: " LESS";
+        }
+        
+        .news-toggle + label:after {
+            content: " MORE";
+        }
+        
         .container {
             max-width: 960px;
             margin: 0 auto;
@@ -242,7 +285,8 @@
         .blink {
             animation: blink 1s infinite;
         }
-              .under-construction {
+        
+        .under-construction {
             position: absolute;
             top: 10px;
             right: 10px;
@@ -260,6 +304,12 @@
         @keyframes blink {
             0% { opacity: 1; }
             50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        
+        @keyframes flash {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
             100% { opacity: 1; }
         }
         
@@ -314,7 +364,6 @@
         }
         */
         
-        /* Дополнительный стиль для цитат */
         blockquote {
             border-left: 3px solid #990033;
             padding-left: 15px;
@@ -323,7 +372,6 @@
             color: #ffcccc;
         }
         
-       /* Добавить специальный раздел для Астариона */
         .astarion-thoughts {
             position: relative;
             background-color: rgba(153, 0, 51, 0.2);
@@ -358,6 +406,20 @@
             font-size: 0.9em;
             z-index: 2;
         }
+        
+        /* Стиль для расширенного содержимого новостей */
+        .extended-content {
+            color: #ffcccc;
+        }
+        
+        .extended-content p {
+            margin: 10px 0;
+        }
+        
+        .extended-content p i {
+            color: #ff99cc; 
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
@@ -365,7 +427,6 @@
     <div class="under-construction">UNDER CONSTRUCTION!</div>
     <div class="container">
         <header>
-            
             <h1 class="blink">CRIMSON ECSTASY PRODUCTIONS</h1>
             <p>The Obscene Archive of Forgotten Pleasures</p>
         </header>
@@ -405,9 +466,9 @@
                         <span class="new-banner">HIT!</span>
                     </div>
                     <h3>Nocturnal Emissions</h3>
-                  <p style="color: #b2477d; text-align: center; font-style: margin: 5px 0;">“When the dream touches you back.”</p>
+                  <p style="color: #b2477d; text-align: center; font-style: margin: 5px 0;">"When the dream touches you back."</p>
                     <p>A surreal, oneiric descent into lust, memory, and bodily possession. A nameless sleeper is trapped in an endless dream sequence, seduced by spectral lovers, shadow-figures, and possibly herself.</p>
-                  <p style="color: #ff99cc; font-style: margin: 5px 0;">“It’s not a film. It’s a wet hallucination left to ferment.”</p>
+                  <p style="color: #ff99cc; font-style: margin: 5px 0;">"It's not a film. It's a wet hallucination left to ferment."</p>
                 </div>
                 
                 <div class="feature-item">
@@ -415,9 +476,9 @@
                         <img src="images/films/film2.png" alt="Film 2">
                     </div>
                     <h3>The Moan Architect</h3>
-                  <p style="color: #b2477d; text-align: center; font-style: margin: 5px 0;">“In the house of mirrors, every scream is yours.”</p>
+                  <p style="color: #b2477d; text-align: center; font-style: margin: 5px 0;">"In the house of mirrors, every scream is yours."</p>
                     <p>An architect designs a mansion with no exits and hires six strangers to live inside. 90 minutes of fevered hallucinations, soft-focus orgies, and whispered French existentialism. No two people have seen the same version.</p>
-                    <p style="color: #ff99cc; font-style: margin: 5px 0;">“A sex-drenched riddle, wrapped in sweat, whispered by regret.”</p>
+                    <p style="color: #ff99cc; font-style: margin: 5px 0;">"A sex-drenched riddle, wrapped in sweat, whispered by regret."</p>
                 </div>
                 
                 <div class="feature-item">
@@ -425,9 +486,9 @@
                         <img src="images/films/film3.png" alt="Film 3">
                     </div>
                     <h3>Velvet Hunger: The Uncut Gospel</h3>
-                  <p style="color: #b2477d; text-align: center; font-style: margin: 5px 0;">“His body is a sermon. Her scream is scripture.”</p>
-                    <p>A bisexual saint is hunted by masked inquisitors through a labyrinthine monastery turned brothel. It’s part giallo, part erotic passion play, part incoherent séance. There is a goat. It may be a metaphor.</p>
-                  <p style="color: #ff99cc; font-style: margin: 5px 0;">“The rare adult film that might actually save your soul while corrupting it.”</p>
+                  <p style="color: #b2477d; text-align: center; font-style: margin: 5px 0;">"His body is a sermon. Her scream is scripture."</p>
+                    <p>A bisexual saint is hunted by masked inquisitors through a labyrinthine monastery turned brothel. It's part giallo, part erotic passion play, part incoherent séance. There is a goat. It may be a metaphor.</p>
+                  <p style="color: #ff99cc; font-style: margin: 5px 0;">"The rare adult film that might actually save your soul while corrupting it."</p>
                 </div>
             </div>
         </section>
@@ -439,22 +500,55 @@
                 <div class="news-date">April 12, 2025</div>
                 <h3>Production Begins: ABSOLUTE CINEMA — The Astarion Chronicles</h3>
                 <p>Lights. Blood. Action.</p>
-              <p>We are ecstatic (and lightly delirious) to announce an unprecedented multi-layer documentary project chronicling the creation of Astarion's self-referential revolutionary magnum opus.</p>
-                <a href="#news1" class="btn">Read More</a>
+                <p>We are ecstatic (and lightly delirious) to announce an unprecedented multi-layer documentary project chronicling the creation of Astarion's self-referential revolutionary magnum opus.</p>
+                
+                <input type="checkbox" id="news1" class="news-toggle">
+                <label for="news1" class="btn">READ</label>
+                
+                <div class="extended-content">
+                    <p>Written, directed, narrated, styled, and scored by Astarion himself, this cinematic manifesto will explore art, desire, power, narcissism, legacy, mirrors, leather, and the unbearable burden of being extremely watchable.</p>
+                    <p>The documentary team has been granted unprecedented access to all areas of production, with the sole exception of Astarion's personal dressing room between the hours of 3 and 4 AM, which he describes as his "vulnerability hour" and refuses to elaborate further on.</p>
+                    <p><i>— Crimson Ecstasy Productions</i></p>
+                    <p><i>“Cinema dies. We just f** the corpse.”</i></p>
+                </div>
             </div>
             
             <div class="news-item">
                 <div class="news-date">March 28, 2025</div>
                 <h3>Things Beneath the Velvet: A Whispered Inventory</h3>
-                <p>A gentle reminder to our followers: if you felt something shift in your sleep last Thursday, that was us. The Vault has been reopened for cataloguing, and several “lost” reels have been accounted for - though some were found pulsing, and one appears to be alive.</p>
-                <a href="#news2" class="btn">Read More</a>
+                <p>A gentle reminder to our followers: if you felt something shift in your sleep last Thursday, that was us. The Vault has been reopened for cataloguing, and several "lost" reels have been accounted for - though some were found pulsing, and one appears to be alive.</p>
+                
+                <input type="checkbox" id="news2" class="news-toggle">
+                <label for="news2" class="btn">READ</label>
+                
+                <div class="extended-content">
+                    <p>The cataloguing process, overseen by our archivist Gale, has uncovered several fragments of unreleased material dating back to Astarion's earliest experimental period. These include a controversial three-hour “breathing study” featuring seven models simply existing in a candle-lit space, and the legendary missing scenes from “Velvet Hunger” that were reportedly too intense even for our most dedicated audience.</p>
+                    <p>“The Vault has yielded treasures beyond my wildest expectations,” Gale wrote in his daily log. “We've discovered an entire subseries of what Astarion refers to as his 'Nocturnes' — short, intensely intimate vignettes shot on expired 16mm film stock that seems to have developed sentience during storage.”</p>
+                    <p>We’ve also discovered a draft script scrawled across thirteen bar napkins titled “Tender Organs, Vol. I”. Authorship: unknown. Content: unspeakable. We’ve greenlit it.</p>
+                    <p>Thank you for your continued obsession.</p>
+                    <p>Remember: nothing you see on our sets is ever entirely staged.</p>
+                    <p><i>— Crimson Ecstasy Productions</i></p>
+                    <p><i>“We don’t film nightmares. We collaborate with them.”</i></p>
+                </div>
             </div>
             
             <div class="news-item">
                 <div class="news-date">February 15, 2025</div>
                 <h3>The Emissions Return: Unearthed, Unrated, Unrepentant</h3>
-                <p>We are thrilled, aroused, and mildly legally compromised to announce that Nocturnal Emissions will be screened once again this year—one night only, unmarked location, whispered invitation only. If you know, you know. If you don’t… dream harder.</p>
-                <a href="#news3" class="btn">Read More</a>
+                <p>We are thrilled, aroused, and mildly legally compromised to announce that Nocturnal Emissions will be screened once again this year—one night only, unmarked location, whispered invitation only. If you know, you know. If you don't… dream harder.</p>
+                
+                <input type="checkbox" id="news3" class="news-toggle">
+                <label for="news3" class="btn">READ</label>
+                
+                <div class="extended-content">
+                    <p>The 35mm reels have been recovered from their vault (which doubled as an ex-lover’s mausoleum) and the restoration process is underway. Expect blood smudges, deliberate damage, and several frames the editors swear weren’t in the original cut. One reel reportedly groans when handled. We take this as a good sign.</p>
+                    <p>As always, we remain devoted to our vision:</p>
+                    <p>Excess. Ecstasy. Enigma.</p>
+                    <p>And maybe a little softcore possession.</p>
+                    <p>Stay tuned. Or don’t. It’ll find you either way.</p>
+                    <p><i>— Crimson Ecstasy Productions</i></p>
+                    <p><i>“Cinema for the damned and the divine.”</i></p>
+                </div>
             </div>
         </section>
         
