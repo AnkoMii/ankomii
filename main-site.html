@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crimson Ecstasy Productions - Astarion's Cinematic Vision</title>
     <style>
+        /* Основные стили сайта */
         body {
             background-color: #000;
             background-image: url("images/background.jpg");
@@ -17,49 +19,6 @@
             padding: 0;
             text-align: center;
             position: relative;
-        }
-        
-        .news-toggle {
-            display: none; /* Скрыть чекбокс */
-        }
-        
-        .news-toggle + label {
-            display: inline-block;
-            background-color: #990033;
-            color: white;
-            padding: 8px 15px;
-            margin-top: 10px;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-        
-        .news-toggle + label:hover {
-            background-color: #ff0066;
-            color: white;
-            transform: scale(1.1);
-        }
-        
-        .news-toggle ~ .extended-content {
-            display: none;
-            margin-top: 15px;
-            padding-top: 10px;
-            border-top: 1px dotted #660022;
-        }
-        
-        .news-toggle:checked ~ .extended-content {
-            display: block;
-        }
-        
-        .news-toggle:checked + label:after {
-            content: " LESS";
-        }
-        
-        .news-toggle + label:after {
-            content: " MORE";
         }
         
         .container {
@@ -75,7 +34,7 @@
         }
         
         .logo {
-            max-width: 40%;  /* Уменьшен размер логотипа с 70% до 40% */
+            max-width: 40%;
             margin: 20px auto;
             filter: drop-shadow(0 0 10px #ff0066);
         }
@@ -159,8 +118,8 @@
             width: 100%;
             height: auto;
             border: 1px solid #990033;
-            box-sizing: border-box; /* Добавлено, чтобы рамка учитывалась в общем размере */
-            display: block; /* Убирает проблемы с пустым пространством */
+            box-sizing: border-box;
+            display: block;
         }
         
         .feature-item h3 {
@@ -190,6 +149,9 @@
             font-weight: bold;
             border-radius: 5px;
             transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-family: 'Courier New', monospace;
         }
         
         .btn:hover {
@@ -203,6 +165,49 @@
             margin-bottom: 20px;
             border-bottom: 1px dotted #990033;
             padding-bottom: 20px;
+        }
+        
+        .news-toggle {
+            display: none;
+        }
+        
+        .news-toggle + label {
+            display: inline-block;
+            background-color: #990033;
+            color: white;
+            padding: 8px 15px;
+            margin-top: 10px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .news-toggle + label:hover {
+            background-color: #ff0066;
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .news-toggle ~ .extended-content {
+            display: none;
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px dotted #660022;
+        }
+        
+        .news-toggle:checked ~ .extended-content {
+            display: block;
+        }
+        
+        .news-toggle:checked + label:after {
+            content: " LESS";
+        }
+        
+        .news-toggle + label:after {
+            content: " MORE";
         }
         
         .news-item p i {
@@ -281,9 +286,14 @@
             }
         }
         
-        /* Мигающие элементы и другие эффекты в стиле ретро */
         .blink {
             animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
         }
         
         .under-construction {
@@ -299,12 +309,6 @@
             border: 1px solid black;
             animation: flash 1s infinite;
             z-index: 100;
-        }
-        
-        @keyframes blink {
-            0% { opacity: 1; }
-            50% { opacity: 0; }
-            100% { opacity: 1; }
         }
         
         @keyframes flash {
@@ -325,7 +329,6 @@
             font-weight: bold;
         }
         
-        /* Добавляем ретро-фон с шумом */
         .noise {
             position: fixed;
             top: 0;
@@ -338,33 +341,11 @@
             pointer-events: none;
         }
         
-        /* VHS эффект для изображений - закомментирован */
         .vhs-effect {
             position: relative;
             overflow: hidden;
         }
         
-        /* Закомментирован бегущий эффект
-        .vhs-effect::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: rgba(255, 255, 255, 0.3);
-            animation: vhs-lines 2s linear infinite;
-            z-index: 1;
-            pointer-events: none;
-        }
-        
-        @keyframes vhs-lines {
-            0% { top: -5px; }
-            100% { top: 100%; }
-        }
-        */
-        
-        /* Additional styling for quotes */
         blockquote {
             border-left: 3px solid #990033;
             padding-left: 15px;
@@ -373,7 +354,6 @@
             color: #ffcccc;
         }
         
-        /* Add a special section for Astarion's thoughts */
         .astarion-thoughts {
             position: relative;
             background-color: rgba(153, 0, 51, 0.2);
@@ -409,7 +389,6 @@
             z-index: 2;
         }
         
-        /* Стиль для расширенного содержимого новостей */
         .extended-content {
             color: #ffcccc;
         }
@@ -419,12 +398,120 @@
         }
         
         .extended-content p i {
-            color: #ff99cc; 
+            color: #ff99cc;
             font-style: italic;
+        }
+        
+        /* Стили для экрана проверки возраста */
+        .age-verification {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .age-content {
+            max-width: 500px;
+            text-align: center;
+            padding: 30px;
+            border: 2px solid #990033;
+            background-color: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 0 20px rgba(255, 0, 102, 0.5);
+            position: relative;
+        }
+        
+        .age-content h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+            border: none;
+            animation: pulse 1.5s infinite alternate;
+        }
+        
+        @keyframes pulse {
+            0% { text-shadow: 0 0 10px #ff0066; }
+            100% { text-shadow: 0 0 20px #ff0066, 0 0 30px #ff0066; }
+        }
+        
+        .age-warning {
+            border-top: 1px solid #990033;
+            border-bottom: 1px solid #990033;
+            padding: 15px 0;
+            margin: 20px 0;
+            color: #ffcccc;
+        }
+        
+        .age-warning span {
+            color: #ff0066;
+            font-weight: bold;
+        }
+        
+        .age-btn {
+            padding: 10px 30px;
+            margin: 10px;
+            font-size: 1em;
+        }
+        
+        .age-btn.no {
+            background-color: transparent;
+            border: 1px solid #990033;
+            color: #ff0066;
+        }
+        
+        .age-btn.no:hover {
+            background-color: rgba(153, 0, 51, 0.3);
+        }
+        
+        .vampire-decoration {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            width: 40px;
+            height: 40px;
+            background-color: #000;
+            border: 2px solid #990033;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ff0066;
+            font-size: 18px;
+        }
+        
+        .vampire-decoration:before {
+            content: "❤";
         }
     </style>
 </head>
 <body>
+    <!-- Экран проверки возраста -->
+    <div class="age-verification" id="age-verification">
+        <div class="age-content">
+            <div class="vampire-decoration"></div>
+            <h2>CRIMSON ECSTASY</h2>
+            <p style="margin-top: -10px; font-style: italic; color: #ff0066;">productions</p>
+            
+            <div class="age-warning">
+                <p>You are about to enter a site that contains <span>explicit adult content</span>.</p>
+                <p>This archive documents the artistic adult cinema of Astarion Ancunín.</p>
+            </div>
+            
+            <p>By entering this site, you confirm that you are at least 18 years of age (or the legal age in your jurisdiction) and are not offended by explicit sexual imagery.</p>
+            
+            <div class="buttons">
+                <button class="btn age-btn" onclick="enterSite()">YES, I AM OVER 18</button>
+                <button class="btn age-btn no" onclick="exitSite()">NO, TAKE ME AWAY</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Основной контент сайта -->
     <div class="noise"></div>
     <div class="under-construction">UNDER CONSTRUCTION!</div>
     <div class="container">
