@@ -242,6 +242,20 @@
         .blink {
             animation: blink 1s infinite;
         }
+              .under-construction {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            transform: rotate(15deg);
+            font-weight: bold;
+            background: yellow;
+            color: red;
+            padding: 3px 8px;
+            font-size: 0.8em;
+            border: 1px solid black;
+            animation: flash 1s infinite;
+            z-index: 100;
+        }
         
         @keyframes blink {
             0% { opacity: 1; }
@@ -348,11 +362,12 @@
 </head>
 <body>
     <div class="noise"></div>
+    <div class="under-construction">UNDER CONSTRUCTION!</div>
     <div class="container">
         <header>
-            <img src="images/logo.png" alt="Crimson Ecstasy Productions Logo" class="logo">
+            
             <h1 class="blink">CRIMSON ECSTASY PRODUCTIONS</h1>
-            <p>"Art is all about layers. Like an onion, but significantly better dressed." - Astarion</p>
+            <p>The Obscene Archive of Forgotten Pleasures</p>
         </header>
         
         <nav>
@@ -361,14 +376,13 @@
                 <li><a href="#films">Films</a></li>
                 <li><a href="#crew">Crew</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#shop">Shop</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#social-links">Contact</a></li>
             </ul>
         </nav>
         
         <div class="astarion-thoughts">
-            <p>"Cinema is not merely an art form—it is my autobiography written in flesh and shadow. Every frame contains a fragment of my soul, every edit a heartbeat, every scene a confession the audience is privileged to witness."</p>
-            <p>- Astarion, from his upcoming memoir "Reflected in Crimson: The Art of Self-Realization Through Erotic Cinema"</p>
+            <p>"Cinema is not merely an art form - it is my autobiography written in flesh and shadow. Every frame contains a fragment of my soul, every edit a heartbeat, every scene a confession the audience is privileged to witness."</p>
+            <p>- Astarion Ancunín, from his upcoming memoir "Reflected in Crimson: The Art of Self-Realization Through Erotic Cinema"</p>
         </div>
         
         <section id="featured-film">
@@ -376,11 +390,10 @@
             <div class="vhs-effect">
                 <img src="images/films/featured.png" alt="The Astarion Chronicles" style="max-width:100%; display: block; margin: 0 auto; border: 1px solid #990033; box-sizing: border-box;">
             </div>
-            <h3>"THE ASTARION CHRONICLES: INCEPTION OF NARCISSISM"</h3>
-            <p>The visionary auteur's most daring creation yet. A revolutionary film that blurs the line between creator and creation, art and artist, genius and madness.</p>
-            <p><i>"I'm not merely documenting my life—I'm transcending conventional narrative. This film exists at the intersection of memoir, meta-fiction, and the sublime erotic."</i> - Astarion</p>
-            <a href="#trailer" class="btn">Watch Trailer</a>
-            <a href="#buy" class="btn">Pre-order</a>
+            <h3>"ABSOLUTE CINEMA: THE ASTARION CHRONICLES"</h3>
+            <p>Astarion's autobiographical magnum opus - a film about himself making a film about himself making films. Features a Russian doll structure of nested realities: the original film, the documentary about making the original film, and the biopic recreating both.</p>
+            <p style="color: #ff99cc; font-style: margin: 5px 0;"><small>"I'm not merely documenting my life - I'm transcending conventional narrative. This film exists at the intersection of memoir, meta-fiction, and the sublime erotic. Like Damiano's 'Deep Throat' revolutionized the genre by introducing plot to pornography, I intend to revolutionize it again by introducing meta-narrative complexity." - Astarion Ancunín.</small></p>
+            <a href="#trailer" class="btn">Production Materials</a>
         </section>
         
         <section id="films">
@@ -391,9 +404,10 @@
                         <img src="images/films/film1.png" alt="Film 1">
                         <span class="new-banner">HIT!</span>
                     </div>
-                    <h3>Moonlit Confessions</h3>
-                    <p>Six strangers. One abandoned mausoleum. Desires revealed under the pallid glow of the moon. Winner of the Golden Chalice for Cinematography.</p>
-                    <p><i>"The way the light caresses flesh through stained glass... pure visual poetry."</i> - Tadpole Magazine</p>
+                    <h3>Nocturnal Emissions</h3>
+                  <p style="color: #b2477d; text-align: center; font-style: margin: 5px 0;">“When the dream touches you back.”</p>
+                    <p>A surreal, oneiric descent into lust, memory, and bodily possession. A nameless sleeper is trapped in an endless dream sequence, seduced by spectral lovers, shadow-figures, and possibly herself.</p>
+                  <p style="color: #ff99cc; font-style: margin: 5px 0;">“It’s not a film. It’s a wet hallucination left to ferment.”</p>
                     <a href="#details1" class="btn">Details</a>
                 </div>
                 
@@ -401,9 +415,10 @@
                     <div class="vhs-effect">
                         <img src="images/films/film2.png" alt="Film 2">
                     </div>
-                    <h3>Blood & Velvet</h3>
-                    <p>In the shadow world of aristocratic debauchery, a mysterious stranger brings both ecstasy and terror to a decadent masquerade.</p>
-                    <p><i>"Astarion captures the erotic tension between predator and prey with unnerving precision."</i> - Underdark Review</p>
+                    <h3>The Moan Architect</h3>
+                  <p style="color: #b2477d; text-align: center; font-style: margin: 5px 0;">“In the house of mirrors, every scream is yours.”</p>
+                    <p>An architect designs a mansion with no exits and hires six strangers to live inside. 90 minutes of fevered hallucinations, soft-focus orgies, and whispered French existentialism. No two people have seen the same version.</p>
+                    <p style="color: #ff99cc; font-style: margin: 5px 0;">“A sex-drenched riddle, wrapped in sweat, whispered by regret.”</p>
                     <a href="#details2" class="btn">Details</a>
                 </div>
                 
@@ -411,9 +426,10 @@
                     <div class="vhs-effect">
                         <img src="images/films/film3.png" alt="Film 3">
                     </div>
-                    <h3>Midnight Rituals</h3>
-                    <p>When pleasure becomes worship and desire becomes devotion. A controversial exploration of ecstasy as transcendence.</p>
-                    <p><i>"The rare adult film that might actually save your soul while corrupting it."</i></p>
+                    <h3>Velvet Hunger: The Uncut Gospel</h3>
+                  <p style="color: #b2477d; text-align: center; font-style: margin: 5px 0;">“His body is a sermon. Her scream is scripture.”</p>
+                    <p>A bisexual saint is hunted by masked inquisitors through a labyrinthine monastery turned brothel. It’s part giallo, part erotic passion play, part incoherent séance. There is a goat. It may be a metaphor.</p>
+                  <p style="color: #ff99cc; font-style: margin: 5px 0;">“The rare adult film that might actually save your soul while corrupting it.”</p>
                     <a href="#details3" class="btn">Details</a>
                 </div>
             </div>
@@ -423,24 +439,24 @@
             <h2>STUDIO NEWS</h2>
             
             <div class="news-item">
-                <div class="news-date">March 12, 2025</div>
-                <h3>The Making of a Masterpiece: Behind "The Astarion Chronicles"</h3>
-                <p>Crimson Ecstasy Productions announces an unprecedented multi-layer documentary project chronicling the creation of Astarion's self-referential magnum opus. Industry insiders call the concept "revolutionary" and "gloriously self-indulgent."</p>
-                <p><i>"We're capturing the raw emotion of artistic creation in its purest form. Even the documentary crew will be filmed as they react to witnessing genius unfold."</i> - Studio Press Release</p>
+                <div class="news-date">April 12, 2025</div>
+                <h3>Production Begins: ABSOLUTE CINEMA — The Astarion Chronicles</h3>
+                <p>Lights. Blood. Action.</p>
+              <p>We are ecstatic (and lightly delirious) to announce an unprecedented multi-layer documentary project chronicling the creation of Astarion's self-referential revolutionary magnum opus.</p>
                 <a href="#news1" class="btn">Read More</a>
             </div>
             
             <div class="news-item">
-                <div class="news-date">February 28, 2025</div>
-                <h3>Casting Complete: "Astarion" to be Played by Astarion</h3>
-                <p>After an exhaustive nationwide talent search, director Astarion has selected himself to portray himself in his autobiographical film. "No one else could possibly understand the nuances of my experience," explained the director in an impromptu press conference that lasted seven hours.</p>
+                <div class="news-date">March 28, 2025</div>
+                <h3>Things Beneath the Velvet: A Whispered Inventory</h3>
+                <p>A gentle reminder to our followers: if you felt something shift in your sleep last Thursday, that was us. The Vault has been reopened for cataloguing, and several “lost” reels have been accounted for - though some were found pulsing, and one appears to be alive.</p>
                 <a href="#news2" class="btn">Read More</a>
             </div>
             
             <div class="news-item">
                 <div class="news-date">February 15, 2025</div>
-                <h3>Architectural Modifications Underway at Studio Headquarters</h3>
-                <p>The former cathedral serving as Crimson Ecstasy's headquarters is undergoing extensive renovations to accommodate specialized lighting rigs, expanded candle storage, and a "Hall of Mirrors" set designed for a pivotal scene where Astarion contemplates his own image from seventeen different angles simultaneously.</p>
+                <h3>The Emissions Return: Unearthed, Unrated, Unrepentant</h3>
+                <p>We are thrilled, aroused, and mildly legally compromised to announce that Nocturnal Emissions will be screened once again this year—one night only, unmarked location, whispered invitation only. If you know, you know. If you don’t… dream harder.</p>
                 <a href="#news3" class="btn">Read More</a>
             </div>
         </section>
@@ -453,9 +469,10 @@
                     <img src="images/crew/astarion.png" alt="Astarion" style="width: 100%; border: 3px solid #ff0066; box-sizing: border-box; display: block;">
                 </div>
                 <h3 style="font-size: 1.8em; margin-top: 15px;">ASTARION</h3>
-                <p style="font-size: 1.2em; color: #ff0066; margin-bottom: 5px;">Visionary Director, Producer, Star</p>
-                <p style="max-width: 600px; margin: 0 auto; text-align: left; color: #ffcccc;">The creative force behind Crimson Ecstasy Productions. A perfectionist with an unerring eye for beauty in its most raw and authentic forms. Refuses to be photographed eating. Has been described by colleagues as "magnificently unbearable" and "a megalomaniac unicorn." Known for his dramatic entrances, which are choreographed by a full-time "Entrance Coordinator."</p>
-                <p style="text-align: left; margin: 10px auto; max-width: 600px;"><i>"I'm not interested in mere pornography—I'm creating carnal philosophy. Each orgasm captured on film is, in its way, an existential revelation."</i></p>
+                <p style="font-size: 1.2em; color: #ff0066; margin-bottom: 5px;">Director, Visionary, Genius</p>
+                <p style="max-width: 600px; margin: 0 auto; color: #ffcccc;">Astarion doesn’t make films - he orchestrates visions. Each production is a lavish descent into erotic delirium, wrapped in velvet, soaked in metaphor, and lit like a Renaissance painting gone feral. He demands everything from his cast — blood, sweat, ecstasy — and gives them back immortality on screen.</p>
+              <p style="max-width: 600px; margin: 0 auto; color: #ffcccc;">Impossible to work with. Irresistible to follow.</p>
+                <p style=" margin: 10px auto; max-width: 600px; color: #ff99cc;">“Make love to the lens, darling. The audience is begging to be ruined.”</p>
             </div>
             
             <div class="featured">
@@ -464,8 +481,9 @@
                         <img src="images/crew/karlach.png" alt="Karlach">
                     </div>
                     <h3>Karlach</h3>
-                    <p>Technical Director. Masters in Electrical Engineering with a minor in Destruction. Handles all equipment with a curious mix of precision and barely contained violence.</p>
-                    <p><i>"In my experience, most technical problems can be solved with sufficient force applied at the exact right moment."</i></p>
+                  <p>Gaffer / Key Grip / Set Technician / Pyro Consultant</p>
+                    <p>Muscle, heart, and fire. Built half the set out of stolen theater scraps and pure willpower. If it lights up, moves, or nearly kills you, Karlach touched it. Perpetually draped in cables and running on a dangerous mixture of energy drinks and sheer force of will. Can fix anything with duct tape, WD-40, and terrifying competence.</p>
+                  <p style=" margin: 10px auto; max-width: 600px; color: #ff99cc;">“I didn't blow it up. It exploded on its own. That’s different.”</p>
                 </div>
                 
                 <div class="feature-item">
@@ -473,8 +491,9 @@
                         <img src="images/crew/gale.png" alt="Gale">
                     </div>
                     <h3>Gale</h3>
-                    <p>Assistant Director. Former philosophy professor who abandoned academia when he discovered that adult cinema offered "more authentic existential insights." Approaches each shoot as a metaphysical experiment.</p>
-                    <p><i>"The boundary between pornography and philosophy is merely a construct of repressed minds. Both seek to unveil truth through physical exploration."</i></p>
+                  <p>Assistant Director / Line Producer / Accountant</p>
+                    <p>Half sage, half stage mom. Keeps track of time, budget, and what little remains of anyone’s sanity. Writes dramatic voiceovers for scenes no one asked for. Hates his spreadsheet. Hates loving it.</p>
+                  <p style=" margin: 10px auto; max-width: 600px; color: #ff99cc;">"The boundary between pornography and philosophy is merely a construct of repressed minds. Both seek to unveil truth through physical exploration."</p>
                 </div>
                 
                 <div class="feature-item">
@@ -482,8 +501,9 @@
                         <img src="images/crew/tav.png" alt="Tav">
                     </div>
                     <h3>Tav</h3>
-                    <p>Cinematographer. Award-winning camera operator with an uncanny ability to capture moments of authentic vulnerability. Has been known to laugh at inappropriate times.</p>
-                    <p><i>"The camera doesn't just record truth—it creates it. Sometimes that truth is hilarious, even when it shouldn't be."</i></p>
+                  <p>Director of Photography / Camera Operator / Lighting Supervisor</p>
+                    <p>The calm eye in the storm of sex, smoke, and glitter. Runs on burnt coffee and deadpan stares. Has learned to adjust ISO, white balance, and personal expectations at the speed of chaos. Has seen things. Framed them beautifully. And enjoying every absurd minute. Can balance a 20-pound camera rig on one shoulder while flipping off Astarion with her free hand.</p>
+                  <p style=" margin: 10px auto; max-width: 600px; color: #ff99cc;">"Is this art? Is this porn? Does it matter? I just hit record."</p>
                 </div>
             </div>
             
@@ -493,8 +513,9 @@
                         <img src="images/crew/shadowheart.png" alt="Shadowheart">
                     </div>
                     <h3>Shadowheart</h3>
-                    <p>Makeup & Visual Design. Known for her meticulous attention to detail and avant-garde aesthetic sensibilities. Has never been seen wearing any color other than black.</p>
-                    <p><i>"My palettes range from 'midnight abyss' to 'darkest void.' There are seventy-eight distinct shades of darkness, and I use them all."</i></p>
+                   <p>Head of Makeup & Wardrobe / Style Supervisor</p>
+                    <p>If you look hot and haunted, it's her doing. If you look like a cryptid in lace - also her doing. Runs the only organized kit on set. Manages latex, lace, and latex stuck to lace. Judging everyone silently, while powdering genitals with divine detachment.</p>
+                  <p style=" margin: 10px auto; max-width: 600px; color: #ff99cc;">"My palettes range from 'midnight abyss' to 'darkest void.' There are seventy-eight distinct shades of darkness, and I use them all."</p>
                 </div>
                 
                 <div class="feature-item">
@@ -502,8 +523,9 @@
                         <img src="images/crew/wyll.png" alt="Wyll">
                     </div>
                     <h3>Wyll</h3>
-                    <p>Production Manager. The only member of the team who actually understands spreadsheets. Maintains his sanity through meticulous organization and private screaming sessions in the supply closet.</p>
-                    <p><i>"Creating a budget line for 'Unexpected Narcissistic Crises' was the best financial decision I've ever made."</i></p>
+                  <p>Sound Engineer / Noise Suppression Specialist / Ethics Committee</p>
+                    <p>Carries a boom mic like a crusader. Censors breathy noises like a man possessed. Has PTSD from that one shoot involving syrup, stilts, and a haunted synth score.</p>
+                  <p style=" margin: 10px auto; max-width: 600px; color: #ff99cc;">“Please, I’m begging you: no more chains on tile floors.”</p>
                 </div>
                 
                 <div class="feature-item">
@@ -511,8 +533,9 @@
                         <img src="images/crew/laezel.png" alt="Lae'zel">
                     </div>
                     <h3>Lae'zel</h3>
-                    <p>Movement Director. Former military choreographer who approaches intimate scenes with tactical precision. Has been known to use battlefield terminology during direction.</p>
-                    <p><i>"Inefficient coupling techniques waste energy that could be directed toward maximum pleasure impact. My job is to optimize the engagement."</i></p>
+                  <p>Intimacy Coordinator / Stunt Safety / Legal Consultant</p>
+                    <p>No one gets naked without her say-so. She runs the consent meetings like battlefield briefings. You’ll know the rules. You’ll fear the clipboard.</p>
+                  <p style=" margin: 10px auto; max-width: 600px; color: #ff99cc;">“Touch them without consent again, and I’ll staple your NDA to your forehead.”</p>
                 </div>
             </div>
         </section>
@@ -522,23 +545,23 @@
             <div class="vhs-effect">
                 <img src="images/studio.png" alt="Crimson Ecstasy Studios" style="max-width:100%; margin-bottom:20px; display: block; margin: 0 auto 20px; border: 1px solid #990033; box-sizing: border-box;">
             </div>
-            <p>Founded in 2020, Crimson Ecstasy Productions emerged from Astarion's vision to transform adult cinema into legitimate art. Headquartered in a deconsecrated Gothic revival cathedral (acquired through means that studio lawyers have advised us not to disclose), our production house has quickly gained notoriety for pushing boundaries between the erotic and the existential.</p>
-            <p>Our aesthetic philosophy centers on what Astarion calls "The Crimson Principle" — the belief that true desire exists in the tension between fear and fascination. All our films explore this delicate balance, creating experiences that are simultaneously arousing and unnerving.</p>
-            <p>The studio facility features custom-designed soundstages, a proprietary lighting system that took three electrical engineers six months to perfect (two of whom subsequently required therapy), and the largest collection of artisanal candles in North America. Our fire insurance premiums alone account for 18% of our annual operating budget.</p>
+            <p>Crimson Ecstasy Productions emerged from Astarion's vision to transform adult cinema into legitimate art, reviving the artistic approach of 1970s erotic auteurs. Headquartered in a deconsecrated Gothic revival cathedral (acquired through means that studio lawyers have advised us not to disclose), our production house has quickly gained notoriety for pushing boundaries between the erotic and the existential.</p>
+            <p>Our aesthetic philosophy centers on what Astarion calls "The Crimson Principle" - the belief that true desire exists in the tension between fear and fascination. All our films explore this delicate balance, creating experiences that are simultaneously arousing and unnerving.</p>
+            <p>The studio facility features custom-designed soundstages, a proprietary lighting system that took three electrical engineers six months to perfect, and the largest collection of artisanal candles. Our fire insurance premiums alone account for 18% of our annual operating budget.</p>
             <p>Visitors frequently remark on the building's unusual ambiance, described variously as "seductively oppressive," "gothically arousing," and "like being inside a sensual panic attack." Tours are available by appointment, though all guests must sign extensive liability waivers and are advised not to wear synthetic fabrics due to the proximity of open flames.</p>
-            <a href="#full-story" class="btn">Full Studio History</a>
         </section>
         
         <footer>
+          <section id="social-links">
             <div class="social-links">
-                <a href="#twitter">Twitter</a>
-                <a href="#instagram">Instagram</a>
-                <a href="#onlyfans">OnlyFans</a>
+                <a href="https://www.tumblr.com/lolthwoven">Tumblr</a>
+                <a href="#onlyfans">OnlyFangs</a>
+                <a href="https://archiveofourown.org/users/LolthWoven">AO3</a>
+                
             </div>
-            
+            <p><a href="quill.and.fangs@crimson-ecstasy.com" style="color: #ff0066; text-decoration: none;">quill.and.fangs@crimson-ecstasy.com</a></p>
             <div class="newsletter">
                 <h3>Subscribe to our newsletter</h3>
-                <p>Receive whispers of upcoming releases directly from Astarion himself</p>
                 <form>
                     <input type="email" placeholder="Your email" required>
                     <button type="submit">Subscribe</button>
@@ -547,7 +570,7 @@
             
             <p>&copy; 2025 Crimson Ecstasy Productions. Adults only.</p>
             <p>This is a fanfiction website based on Baldur's Gate 3 characters. All characters are fictional.</p>
-            <p><small>The views expressed by Astarion do not necessarily reflect reality, sanity, or basic physics. Viewer discretion is advised.</small></p>
+           
         </footer>
     </div>
 </body>
