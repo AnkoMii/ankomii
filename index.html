@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crimson Ecstasy Productions - Age Verification</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Courier New', monospace;
+            color: #ff0066;
+            overflow: hidden;
+        }
+        
+        .blur-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("images/background.jpg");
+            background-position: center center;
+            background-size: cover;
+            filter: blur(15px);
+            z-index: -1;
+        }
+        
+        .age-verification {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+        
+        .age-content {
+            max-width: 500px;
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #990033;
+            background-color: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 0 20px rgba(255, 0, 102, 0.5);
+            position: relative;
+        }
+        
+        .logo-container {
+            margin-bottom: 20px;
+        }
+        
+        .logo {
+            max-width: 350px;
+            margin: 0 auto;
+            filter: drop-shadow(0 0 10px #ff0066);
+        }
+        
+        h1 {
+            font-size: 2em;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px #ff0066;
+            animation: pulse 1.5s infinite alternate;
+        }
+        
+        @keyframes pulse {
+            0% { text-shadow: 0 0 10px #ff0066; }
+            100% { text-shadow: 0 0 20px #ff0066, 0 0 30px #ff0066; }
+        }
+        
+        p {
+            margin-bottom: 25px;
+            font-size: 1.1em;
+            color: #ffcccc;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #990033;
+            color: white;
+            padding: 10px 30px;
+            margin: 10px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Courier New', monospace;
+            font-size: 1em;
+        }
+        
+        .btn:hover {
+            background-color: #ff0066;
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(255, 0, 102, 0.8);
+        }
+        
+        .btn.no {
+            background-color: transparent;
+            border: 1px solid #990033;
+            color: #ff0066;
+        }
+        
+        .btn.no:hover {
+            background-color: rgba(153, 0, 51, 0.3);
+        }
+        
+        .noise {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWDg4N3d3dtbW17e3t1dXWBgYGHh4d5eXlzc3OLi4ubm5uVlZWPj4+NjY19fX2JiYl/f39ra2uRkZGZmZlpaWmXl5dvb29xcXGTk5NnZ2c4zIgDAAAA7UlEQVR4Ae3SzUoDMRQF4LxJm5l0RsGf9v3f1AULoXQ1YLML5y5CCHdxPu4tZtv2TRszYy+MD/CiO8FT/Qn8iqEPGPnch98toR9YuLP3CyG+YOTkA4fd5xAyMHHzgePuc4mRCbzc/SYXmMDwd0QICZi5+8BO9g3GE3jwk5wNJ2BUv8kZnqDD5HA8AYMuNsVPwKiLTfETMOpkS4kTMOpkS4kTMGkyKXECRvWTnKDP5Eg8AaP6Sc6wJpMj8QRMykn2JtyAQZNJiRswaVu5wFqEXG0Bc9mHX1H9gJGLD791hh0YufnM3v59E9uv59+n5/4AThiHH7vqMFwAAAAASUVORK5CYII=');
+            opacity: 0.03;
+            z-index: -2;
+        }
+        
+        /* Скрытый сайт */
+        .main-site {
+            display: none;
+        }
+        
+        .warning {
+            border-top: 1px solid #990033;
+            border-bottom: 1px solid #990033;
+            padding: 15px 0;
+            margin: 20px 0;
+            color: #ffcccc;
+        }
+        
+        .warning span {
+            color: #ff0066;
+            font-weight: bold;
+        }
+        
+        .vampire-decoration {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            width: 40px;
+            height: 40px;
+            background-color: #000;
+            border: 2px solid #990033;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ff0066;
+            font-size: 18px;
+        }
+        
+        .vampire-decoration:before {
+            content: "❤";
+        }
+    </style>
+</head>
+<body>
+    <div class="blur-container"></div>
+    <div class="noise"></div>
+    
+    <div class="age-verification" id="age-verification">
+        <div class="age-content">
+            <div class="vampire-decoration"></div>
+            <div class="logo-container">
+                <h1>CRIMSON ECSTASY</h1>
+                <p style="margin-top: -10px; font-style: italic;">productions</p>
+            </div>
+            
+            <div class="warning">
+                <p>You are about to enter a site that contains <span>explicit adult content</span>.</p>
+                <p>This archive documents the artistic adult cinema of Astarion Ancunín.</p>
+            </div>
+            
+            <p>By entering this site, you confirm that you are at least 18 years of age (or the legal age in your jurisdiction) and are not offended by explicit sexual imagery.</p>
+            
+            <div class="buttons">
+                <button class="btn" onclick="enterSite()">YES, I AM OVER 18</button>
+                <button class="btn no" onclick="exitSite()">NO, TAKE ME AWAY</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="main-site" id="main-site">
+        <!-- Здесь будет iframe с основным сайтом или код переадресации -->
+        <iframe src="main-site.html" style="width:100%; height:100%; border:none;"></iframe>
+    </div>
+    
+    <script>
+        function enterSite() {
+            document.getElementById('age-verification').style.display = 'none';
+            document.getElementById('main-site').style.display = 'block';
+            
+        }
+        
+        function exitSite() {
+            // Перенаправление на безопасный сайт 
+            window.location.href = 'https://www.google.com';
+        }
+    </script>
+</body>
+</html>
