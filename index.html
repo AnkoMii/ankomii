@@ -634,52 +634,7 @@
 #about p {
     color: #df84a2;
 }
-    /* Стили для изображений фильмов (постеров) с фильтрами */
-#films .feature-item img, 
-#featured-film img {
-    width: 100%;
-    height: auto;
-    border: 1px solid #990033;
-    box-sizing: border-box;
-    display: block;
-    filter: saturate(0.8) brightness(0.95) contrast(1.2); /* Сохраняем фильтры для постеров */
-    transition: all 0.3s ease;
-}
-
-/* Эффекты при наведении для постеров фильмов */
-#films .feature-item:hover img,
-#featured-film:hover img {
-    transform: scale(1.03);
-    filter: saturate(1.1) brightness(1.05) contrast(1.3); /* Усиливаем фильтры при наведении */
-    box-shadow: 
-        5px 5px 0 #ff0066,
-        -5px -5px 0 #00E6E6;
-}
-
-/* Базовые стили для портретов команды - БЕЗ фильтров */
-#crew .feature-item img {
-    width: 100%;
-    height: auto;
-    border: 1px solid #4D4D4D;
-    box-sizing: border-box;
-    display: block;
-    filter: none; /* Убираем все фильтры с портретов */
-    transition: all 0.3s ease;
-}
-
-/* Эффекты при наведении для портретов - только тени, без фильтров */
-#crew .feature-item:hover img {
-    transform: scale(1.03);
-    box-shadow: 
-        5px 5px 0 #ff0066,
-        -5px -5px 0 #00E6E6;
-}
-
-/* Стиль для портрета Астариона - только рамка, без фильтров */
-#crew .feature-item [alt="Astarion"] {
-    border: 2px solid #990033 !important;
-    filter: none !important;
-}  
+      
     </style>
 </head>
 <body>
@@ -736,8 +691,8 @@
             </div>
             <h3>"ABSOLUTE CINEMA: THE ASTARION CHRONICLES"</h3>
             <p>Astarion's autobiographical magnum opus - a film about himself making a film about himself making films. Features a Russian doll structure of nested realities: the original film, the documentary about making the original film, and the biopic recreating both.</p>
-            <p style="color: #ff99cc; font-style: margin: 5px 0;">"I'm not merely documenting my life - I'm transcending conventional narrative. This film exists at the intersection of memoir, meta-fiction, and the sublime erotic. Like Damiano's 'Deep Throat' revolutionized the genre by introducing plot to pornography, I intend to revolutionize it again by introducing meta-narrative complexity." - Astarion Ancunín.</small></p>
-            <a href="https://archiveofourown.org/users/LolthWoven" href="#trailer" class="btn">Production Materials</a>
+            <p style="color: #ff99cc; font-style: margin: 5px 0;"><small>"I'm not merely documenting my life - I'm transcending conventional narrative. This film exists at the intersection of memoir, meta-fiction, and the sublime erotic. Like Damiano's 'Deep Throat' revolutionized the genre by introducing plot to pornography, I intend to revolutionize it again by introducing meta-narrative complexity." - Astarion Ancunín.</small></p>
+            <a href="#trailer" class="btn">Production Materials</a>
         </section>
         
         <section id="films">
