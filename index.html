@@ -672,26 +672,22 @@
     width: 40%;
     max-width: 340px;
     position: relative;
-    border: 2px solid #990033; /* Переносим рамку на контейнер */
-    box-shadow: 5px 5px 0 rgba(255, 0, 102, 0.5), 
-                -5px -5px 0 rgba(0, 230, 230, 0.5);
-    transition: all 0.3s ease;
-    background-color: #1a0011; /* Фон для контейнера */
+    background-color: transparent;
 }
 
-.film-poster:hover {
-    transform: scale(1.02);
-    box-shadow: 8px 8px 0 rgba(255, 0, 102, 0.7), 
-                -8px -8px 0 rgba(0, 230, 230, 0.7);
+.film-poster:hover img {
+    transform: none; /* Убираем трансформацию при наведении */
+    box-shadow: none; /* Убираем тени при наведении */
 }
 
 .film-poster img {
     width: 100%;
     height: auto;
-    aspect-ratio: 2/3; /* Сохраняем соотношение сторон */
+    aspect-ratio: 2/3; /* Классическое соотношение сторон для киноафиш */
     object-fit: contain;
     display: block;
-    border: none; /* Убираем рамку с самого изображения */
+    border: none; /* Убираем рамку с изображения */
+    transition: none; /* Убираем переходы */
 
 }
 
