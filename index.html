@@ -114,12 +114,14 @@
         }
         
         /* Обновленные стили для портретов команды */
-        .feature-item img {
-            width: 100%;
-            height: auto;
-            border: 1px solid #4D4D4D; /* Нейтральная серая рамка вместо розовой */
-            box-sizing: border-box;
-            display: block;
+#films .feature-item img, 
+#featured-film img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #990033;
+    box-sizing: border-box;
+    display: block;
+    transition: all 0.3s ease;
         }
         
         /* Специальный стиль для портрета Астариона */
@@ -527,17 +529,49 @@
 .btn:hover::after {
     transform: translateX(0);
 }
-     .feature-item img {
+/* Стили для изображений фильмов (постеров) */
+#films .feature-item img, 
+#featured-film img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #990033;
+    box-sizing: border-box;
+    display: block;
     transition: all 0.3s ease;
-    filter: saturate(0.8) brightness(0.95) contrast(1.2);
 }
 
-.feature-item:hover img {
+/* Эффекты при наведении для постеров фильмов */
+#films .feature-item:hover img,
+#featured-film:hover img {
     transform: scale(1.03);
-    filter: saturate(1.1) brightness(1.05) contrast(1.3);
     box-shadow: 
         5px 5px 0 #ff0066,
         -5px -5px 0 #00E6E6;
+}
+
+/* Базовые стили для портретов команды - БЕЗ фильтров */
+#crew .feature-item img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #4D4D4D;
+    box-sizing: border-box;
+    display: block;
+    filter: none; /* Убираем все фильтры */
+    transition: all 0.3s ease;
+}
+
+/* Эффекты при наведении для портретов - только тени, без фильтров */
+#crew .feature-item:hover img {
+    transform: scale(1.03);
+    box-shadow: 
+        5px 5px 0 #ff0066,
+        -5px -5px 0 #00E6E6;
+}
+
+/* Стиль для портрета Астариона - только рамка, без фильтров */
+#crew .feature-item [alt="Astarion"] {
+    border: 2px solid #990033 !important;
+    filter: none !important;
 } 
       /* Супрематическая стилизация для фильмов */
 .feature-item {
