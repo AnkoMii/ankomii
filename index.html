@@ -634,7 +634,43 @@
 #about p {
     color: #df84a2;
 }
-      
+   /* Базовые стили для всех изображений */
+.feature-item img {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+/* Стили для портретов команды (без фильтров) */
+#crew .feature-item img {
+    border: 1px solid #4D4D4D;
+    filter: none; /* Убираем все фильтры для портретов */
+}
+
+#crew .feature-item:hover img {
+    transform: scale(1.03);
+    box-shadow: 5px 5px 0 #ff0066, -5px -5px 0 #00E6E6;
+}
+
+/* Специальный стиль для портрета Астариона */
+#crew [alt="Astarion"] {
+    border: 2px solid #990033 !important;
+    filter: none; /* Никаких фильтров */
+}
+
+/* Стили для постеров фильмов (с фильтрами) */
+#films .feature-item img {
+    border: 1px solid #990033;
+    filter: saturate(0.8) brightness(0.95) contrast(1.2);
+}
+
+#films .feature-item:hover img {
+    transform: scale(1.03);
+    filter: saturate(1.1) brightness(1.05) contrast(1.3); /* Сохраняем эффекты для постеров */
+    box-shadow: 5px 5px 0 #ff0066, -5px -5px 0 #00E6E6;
+}   
     </style>
 </head>
 <body>
