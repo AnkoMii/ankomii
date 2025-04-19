@@ -658,7 +658,110 @@
     filter: saturate(1.1) brightness(1.05) contrast(1.3);
     box-shadow: 5px 5px 0 #ff0066, -5px -5px 0 #00E6E6;
 }   
-    </style>
+/* Новый стиль для секции главного фильма */
+#featured-film {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 25px;
+    margin: 40px 0;
+    text-align: left;
+}
+
+/* Стиль для постера фильма */
+.film-poster {
+    width: 40%;
+    max-width: 340px;
+    position: relative;
+}
+
+.film-poster img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2/3; /* Классическое соотношение сторон для киноафиш */
+    object-fit: cover;
+    border: 1px solid #990033;
+    box-shadow: 5px 5px 0 rgba(255, 0, 102, 0.5), 
+                -5px -5px 0 rgba(0, 230, 230, 0.5);
+    transition: all 0.3s ease;
+}
+
+.film-poster:hover img {
+    transform: scale(1.02);
+    box-shadow: 8px 8px 0 rgba(255, 0, 102, 0.7), 
+                -8px -8px 0 rgba(0, 230, 230, 0.7);
+}
+
+/* Стиль для информации о фильме */
+.film-info {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.film-info h2 {
+    text-align: left;
+    border-bottom: none;
+    margin-top: 0;
+    padding-bottom: 5px;
+}
+
+.film-info h2::after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 80px;
+    background: linear-gradient(to right, #ff0066, #00E6E6);
+    margin-top: 8px;
+}
+
+.film-info h3 {
+    margin: 5px 0 15px 0;
+    font-size: 1.7em;
+    color: #00E6E6;
+    text-shadow: 0 0 10px rgba(0, 230, 230, 0.5);
+}
+
+.film-info p {
+    margin-bottom: 15px;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.film-quote {
+    color: ##ff99cc !important;
+    text-shadow: 0 0 5px rgba(0, 230, 230, 0.3);
+    border-left: 3px solid #990033;
+    padding-left: 15px;
+    margin: 20px 0;
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 768px) {
+    #featured-film {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .film-poster {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+    
+    .film-info {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .film-info h2, .film-info p {
+        text-align: center;
+    }
+    
+    .film-info h2::after {
+        margin: 8px auto 0;
+    }
+}
+</style>
 </head>
 <body>
     <!-- Экран проверки возраста -->
@@ -707,16 +810,26 @@
             <p>- Astarion Ancunín, from his upcoming memoir "Reflected in Crimson: The Art of Self-Realization Through Erotic Cinema"</p>
         </div>
         
-        <section id="featured-film">
-            <h2>NEW EXCLUSIVE RELEASE</h2>
-            <div class="vhs-effect">
-                <img src="images/films/featured.png" alt="The Astarion Chronicles" style="max-width:100%; display: block; margin: 0 auto; border: 1px solid #990033; box-sizing: border-box;">
-            </div>
-            <h3>"ABSOLUTE CINEMA: THE ASTARION CHRONICLES"</h3>
-            <p>Astarion's autobiographical magnum opus - a film about himself making a film about himself making films. Features a Russian doll structure of nested realities: the original film, the documentary about making the original film, and the biopic recreating both.</p>
-            <p style="color: #ff99cc; font-style: margin: 5px 0;"><small>"I'm not merely documenting my life - I'm transcending conventional narrative. This film exists at the intersection of memoir, meta-fiction, and the sublime erotic. Like Damiano's 'Deep Throat' revolutionized the genre by introducing plot to pornography, I intend to revolutionize it again by introducing meta-narrative complexity." - Astarion Ancunín.</small></p>
-            <a href="https://archiveofourown.org/users/LolthWoven" href="#trailer" class="btn">Production Materials</a>
-        </section>
+    <section id="featured-film">
+    <div class="film-poster vhs-effect">
+        <img src="images/films/featured.png" alt="The Astarion Chronicles">
+    </div>
+    
+    <div class="film-info">
+        <h2>NEW EXCLUSIVE RELEASE</h2>
+        <h3>"ABSOLUTE CINEMA: THE ASTARION CHRONICLES"</h3>
+        
+        <p style="color: #df84a2;">Astarion's autobiographical magnum opus - a film about himself making a film about himself making films. Features a Russian doll structure of nested realities: the original film, the documentary about making the original film, and the biopic recreating both.</p>
+        
+        <p class="film-quote">"I'm not merely documenting my life - I'm transcending conventional narrative. This film exists at the intersection of memoir, meta-fiction, and the sublime erotic. Like Damiano's 'Deep Throat' revolutionized the genre by introducing plot to pornography, I intend to revolutionize it again by introducing meta-narrative complexity."</p>
+        
+        <p style="text-align: right; color: #ff0066;">- Astarion Ancunín</p>
+        
+        <div>
+            <a href="#trailer" class="btn">Production Materials</a>
+        </div>
+    </div>
+</section>
         
         <section id="films">
             <h2>POPULAR RELEASES</h2>
