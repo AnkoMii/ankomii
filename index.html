@@ -668,28 +668,33 @@
     text-align: left;
 }
 
-/* Стиль для постера фильма */
+/* Улучшенный стиль для постера фильма */
 .film-poster {
     width: 40%;
     max-width: 340px;
     position: relative;
+    padding: 4px; /* Добавляем отступ вокруг изображения */
+    background-color: #000; /* Черный фон вокруг постера */
 }
 
 .film-poster img {
     width: 100%;
     height: auto;
     aspect-ratio: 2/3; /* Классическое соотношение сторон для киноафиш */
-    object-fit: cover;
-    border: 1px solid #990033;
+    object-fit: contain; /* Меняем на contain вместо cover */
+    border: 2px solid #990033; /* Делаем рамку немного толще */
     box-shadow: 5px 5px 0 rgba(255, 0, 102, 0.5), 
                 -5px -5px 0 rgba(0, 230, 230, 0.5);
     transition: all 0.3s ease;
+    display: block; /* Чтобы избежать проблем с отображением */
+    box-sizing: border-box; /* Гарантирует, что рамка учитывается в размерах */
 }
 
 .film-poster:hover img {
     transform: scale(1.02);
     box-shadow: 8px 8px 0 rgba(255, 0, 102, 0.7), 
                 -8px -8px 0 rgba(0, 230, 230, 0.7);
+
 }
 
 /* Стиль для информации о фильме */
