@@ -3,115 +3,351 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crimson Ecstasy Productions - Age Verification</title>
+    <title>Crimson Ecstasy Productions - Astarion's Cinematic Vision</title>
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
+        /* Основные стили сайта */
+        body {
+            background-color: #000;
+            background-image: url("images/background.jpg");
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             font-family: 'Courier New', monospace;
             color: #ff0066;
-            overflow: hidden;
-        }
-        
-        .blur-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url("images/background.jpg");
-            background-position: center center;
-            background-size: cover;
-            filter: blur(15px);
-            z-index: -1;
-        }
-        
-        .age-verification {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 999;
-        }
-        
-        .age-content {
-            max-width: 500px;
+            margin: 0;
+            padding: 0;
             text-align: center;
-            padding: 20px;
-            border: 2px solid #990033;
-            background-color: rgba(0, 0, 0, 0.9);
-            box-shadow: 0 0 20px rgba(255, 0, 102, 0.5);
             position: relative;
         }
         
-        .logo-container {
-            margin-bottom: 20px;
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border: 2px solid #990033;
+        }
+        
+        header {
+            margin-bottom: 30px;
         }
         
         .logo {
-            max-width: 350px;
-            margin: 0 auto;
+            max-width: 40%;
+            margin: 20px auto;
             filter: drop-shadow(0 0 10px #ff0066);
         }
         
-        h1 {
-            font-size: 2em;
-            margin-bottom: 15px;
+        h1, h2, h3 {
             text-transform: uppercase;
-            letter-spacing: 3px;
+            font-weight: bold;
             text-shadow: 0 0 10px #ff0066;
-            animation: pulse 1.5s infinite alternate;
         }
         
-        @keyframes pulse {
-            0% { text-shadow: 0 0 10px #ff0066; }
-            100% { text-shadow: 0 0 20px #ff0066, 0 0 30px #ff0066; }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            letter-spacing: 3px;
         }
         
-        p {
-            margin-bottom: 25px;
-            font-size: 1.1em;
+        h2 {
+            font-size: 1.8em;
+            margin-top: 30px;
+            border-bottom: 1px solid #ff0066;
+            padding-bottom: 10px;
+        }
+        
+        nav {
+            background-color: #990033;
+            padding: 10px 0;
+            margin-bottom: 30px;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        nav li {
+            margin: 0 15px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.2em;
+            transition: all 0.3s;
+            padding: 5px 10px;
+        }
+        
+        nav a:hover {
+            color: #ff0066;
+            text-shadow: 0 0 5px white;
+        }
+        
+        .featured {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .feature-item {
+            width: 280px;
+            margin-bottom: 30px;
+            background-color: #1a0011;
+            border: 1px solid #ff0066;
+            padding: 10px;
+            transition: all 0.3s;
+        }
+        
+        .feature-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px #ff0066;
+        }
+        
+        /* Обновленные стили для портретов команды */
+        .feature-item img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #4D4D4D; /* Нейтральная серая рамка вместо розовой */
+            box-sizing: border-box;
+            display: block;
+            filter: saturate(0.8) brightness(0.95); /* Легкий эффект выцветания */
+        }
+        
+        /* Специальный стиль для портрета Астариона */
+        [alt="Astarion"] {
+            border: 2px solid #8d4662 !important; /* Сохраняем красную рамку только для Астариона */
+            filter: saturate(0.9) brightness(1); /* Чуть менее выцветший */
+        }
+        
+        .feature-item h3 {
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+        
+        .feature-item p {
+            font-size: 0.9em;
             color: #ffcccc;
+            text-align: left;
+        }
+        
+        /* Неоново-бирюзовый цвет для цитат */
+        .feature-item p[style*="color: #ff99cc"] {
+            color: #00E6E6 !important; /* Яркий неоново-бирюзовый */
+            text-shadow: 0 0 5px rgba(0, 230, 230, 0.5); /* Легкое свечение */
+        }
+        
+        /* Стиль для цитат в фильмах - бирюзовый */
+        p[style*="color: #b2477d"] {
+            color: #00CCD6 !important; /* Немного менее насыщенный бирюзовый для тэглайнов фильмов */
+            text-align: center;
+            font-style: italic;
+            margin: 5px 0;
         }
         
         .btn {
             display: inline-block;
             background-color: #990033;
             color: white;
-            padding: 10px 30px;
-            margin: 10px;
+            padding: 8px 15px;
+            margin-top: 10px;
             text-decoration: none;
             text-transform: uppercase;
             font-weight: bold;
-            border: none;
             border-radius: 5px;
-            cursor: pointer;
             transition: all 0.3s;
+            cursor: pointer;
+            border: none;
             font-family: 'Courier New', monospace;
-            font-size: 1em;
         }
         
         .btn:hover {
             background-color: #ff0066;
+            color: white;
             transform: scale(1.1);
-            box-shadow: 0 0 15px rgba(255, 0, 102, 0.8);
         }
         
-        .btn.no {
-            background-color: transparent;
-            border: 1px solid #990033;
+        .news-item {
+            text-align: left;
+            margin-bottom: 20px;
+            border-bottom: 1px dotted #990033;
+            padding-bottom: 20px;
+        }
+        
+        .news-toggle {
+            display: none;
+        }
+        
+        .news-toggle + label {
+            display: inline-block;
+            background-color: #990033;
+            color: white;
+            padding: 8px 15px;
+            margin-top: 10px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .news-toggle + label:hover {
+            background-color: #ff0066;
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .news-toggle ~ .extended-content {
+            display: none;
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px dotted #660022;
+        }
+        
+        .news-toggle:checked ~ .extended-content {
+            display: block;
+        }
+        
+        .news-toggle:checked + label:after {
+            content: " LESS";
+        }
+        
+        .news-toggle + label:after {
+            content: " MORE";
+        }
+        
+        /* Бирюзовый цвет (00E6E6) для дат новостей */
+        .news-date {
+            color: #ff99cc; /* цвет для дат новостей */
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+        
+        /* Обновляем цвет для цитат в новостях */
+        .news-item p i,
+        .extended-content p i {
+            font-size: 0.9em;
+            color: #00E6E6 !important; /* Бирюзовый для цитат */
+            display: block;
+            margin-top: 8px;
+            text-shadow: 0 0 5px rgba(0, 230, 230, 0.3);
+        }
+        
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #1a0011;
+            border-top: 2px solid #990033;
+        }
+        
+        .social-links {
+            margin-bottom: 20px;
+        }
+        
+        .social-links a {
             color: #ff0066;
+            font-size: 1.5em;
+            margin: 0 10px;
+            text-decoration: none;
         }
         
-        .btn.no:hover {
-            background-color: rgba(153, 0, 51, 0.3);
+        .newsletter {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .newsletter input[type="email"] {
+            padding: 8px;
+            width: 60%;
+            border: 1px solid #990033;
+            background-color: black;
+            color: white;
+        }
+        
+        .newsletter button {
+            padding: 8px 15px;
+            background-color: #990033;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .newsletter button:hover {
+            background-color: #ff0066;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            nav li {
+                margin: 5px;
+            }
+            
+            .featured {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        /* Мигающий эффект для заголовка с чередованием цветов */
+        .blink {
+            animation: blink 1.5s infinite;
+        }
+        
+        @keyframes blink {
+            0% { opacity: 1; color: #ff0066; }
+            50% { opacity: 0.7; color: #00E6E6; }
+            100% { opacity: 1; color: #ff0066; }
+        }
+        
+        .under-construction {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            transform: rotate(15deg);
+            font-weight: bold;
+            background: yellow;
+            color: red;
+            padding: 3px 8px;
+            font-size: 0.8em;
+            border: 1px solid black;
+            animation: flash 1s infinite;
+            z-index: 100;
+        }
+        
+        @keyframes flash {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        .new-banner {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: #ff0066;
+            color: white;
+            padding: 5px 10px;
+            transform: rotate(15deg);
+            font-size: 0.8em;
+            font-weight: bold;
         }
         
         .noise {
@@ -122,15 +358,106 @@
             height: 100%;
             background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWDg4N3d3dtbW17e3t1dXWBgYGHh4d5eXlzc3OLi4ubm5uVlZWPj4+NjY19fX2JiYl/f39ra2uRkZGZmZlpaWmXl5dvb29xcXGTk5NnZ2c4zIgDAAAA7UlEQVR4Ae3SzUoDMRQF4LxJm5l0RsGf9v3f1AULoXQ1YLML5y5CCHdxPu4tZtv2TRszYy+MD/CiO8FT/Qn8iqEPGPnch98toR9YuLP3CyG+YOTkA4fd5xAyMHHzgePuc4mRCbzc/SYXmMDwd0QICZi5+8BO9g3GE3jwk5wNJ2BUv8kZnqDD5HA8AYMuNsVPwKiLTfETMOpkS4kTMOpkS4kTMGkyKXECRvWTnKDP5Eg8AaP6Sc6wJpMj8QRMykn2JtyAQZNJiRswaVu5wFqEXG0Bc9mHX1H9gJGLD791hh0YufnM3v59E9uv59+n5/4AThiHH7vqMFwAAAAASUVORK5CYII=');
             opacity: 0.03;
-            z-index: -2;
+            z-index: -1;
+            pointer-events: none;
         }
         
-        /* Скрытый сайт */
-        .main-site {
-            display: none;
+        .vhs-effect {
+            position: relative;
+            overflow: hidden;
         }
         
-        .warning {
+        blockquote {
+            border-left: 3px solid #990033;
+            padding-left: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            color: #ffcccc;
+        }
+        
+        .astarion-thoughts {
+            position: relative;
+            background-color: rgba(153, 0, 51, 0.2);
+            border: 1px solid #990033;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .astarion-thoughts:before {
+            content: "";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 30px;
+            background-color: #000;
+            border: 1px solid #990033;
+            z-index: 1;
+        }
+        
+        /* Бирюзовый для заголовка "DIRECTOR'S VISION" */
+        .astarion-thoughts:after {
+            content: "DIRECTOR'S VISION";
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #000;
+            padding: 0 10px;
+            color: #00E6E6; /* Бирюзовый вместо розового */
+            font-size: 0.9em;
+            z-index: 2;
+            text-shadow: 0 0 5px rgba(0, 230, 230, 0.5);
+        }
+        
+        .extended-content {
+            color: #ffcccc;
+        }
+        
+        .extended-content p {
+            margin: 10px 0;
+        }
+        
+        /* Стили для экрана проверки возраста */
+        .age-verification {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .age-content {
+            max-width: 500px;
+            text-align: center;
+            padding: 30px;
+            border: 2px solid #990033;
+            background-color: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 0 20px rgba(255, 0, 102, 0.5);
+            position: relative;
+        }
+        
+        .age-content h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+            border: none;
+            animation: pulse 1.5s infinite alternate;
+        }
+        
+        @keyframes pulse {
+            0% { text-shadow: 0 0 10px #ff0066; }
+            100% { text-shadow: 0 0 20px #ff0066, 0 0 30px #ff0066; }
+        }
+        
+        .age-warning {
             border-top: 1px solid #990033;
             border-bottom: 1px solid #990033;
             padding: 15px 0;
@@ -138,9 +465,25 @@
             color: #ffcccc;
         }
         
-        .warning span {
+        .age-warning span {
             color: #ff0066;
             font-weight: bold;
+        }
+        
+        .age-btn {
+            padding: 10px 30px;
+            margin: 10px;
+            font-size: 1em;
+        }
+        
+        .age-btn.no {
+            background-color: transparent;
+            border: 1px solid #990033;
+            color: #ff0066;
+        }
+        
+        .age-btn.no:hover {
+            background-color: rgba(153, 0, 51, 0.3);
         }
         
         .vampire-decoration {
@@ -165,18 +508,14 @@
     </style>
 </head>
 <body>
-    <div class="blur-container"></div>
-    <div class="noise"></div>
-    
+    <!-- Экран проверки возраста -->
     <div class="age-verification" id="age-verification">
         <div class="age-content">
             <div class="vampire-decoration"></div>
-            <div class="logo-container">
-                <h1>CRIMSON ECSTASY</h1>
-                <p style="margin-top: -10px; font-style: italic;">productions</p>
-            </div>
+            <h2>CRIMSON ECSTASY</h2>
+            <p style="margin-top: -10px; color: #ff0066;">productions</p>
             
-            <div class="warning">
+            <div class="age-warning">
                 <p>You are about to enter a site that contains <span>explicit adult content</span>.</p>
                 <p>This archive documents the artistic adult cinema of Astarion Ancunín.</p>
             </div>
@@ -184,28 +523,263 @@
             <p>By entering this site, you confirm that you are at least 18 years of age (or the legal age in your jurisdiction) and are not offended by explicit sexual imagery.</p>
             
             <div class="buttons">
-                <button class="btn" onclick="enterSite()">YES, I AM OVER 18</button>
-                <button class="btn no" onclick="exitSite()">NO, TAKE ME AWAY</button>
+                <button class="btn age-btn" onclick="enterSite()">YES, I AM OVER 18</button>
+                <button class="btn age-btn no" onclick="exitSite()">NO, TAKE ME AWAY</button>
             </div>
         </div>
     </div>
-    
-    <div class="main-site" id="main-site">
-        <!-- Здесь будет iframe с основным сайтом или код переадресации -->
-        <iframe src="main-site.html" style="width:100%; height:100%; border:none;"></iframe>
-    </div>
-    
-    <script>
-        function enterSite() {
-            document.getElementById('age-verification').style.display = 'none';
-            document.getElementById('main-site').style.display = 'block';
-            
-        }
+
+    <!-- Основной контент сайта -->
+    <div class="noise"></div>
+    <div class="under-construction">UNDER CONSTRUCTION!</div>
+    <div class="container">
+        <header>
+            <h1 class="blink">CRIMSON ECSTASY PRODUCTIONS</h1>
+            <p>The Obscene Archive of Forgotten Pleasures</p>
+        </header>
         
-        function exitSite() {
-            // Перенаправление на безопасный сайт 
-            window.location.href = 'https://www.google.com';
-        }
-    </script>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#films">Films</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#crew">Crew</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#social-links">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <div class="astarion-thoughts">
+            <p>"Cinema is not merely an art form - it is my autobiography written in flesh and shadow. Every frame contains a fragment of my soul, every edit a heartbeat, every scene a confession the audience is privileged to witness."</p>
+            <p>- Astarion Ancunín, from his upcoming memoir "Reflected in Crimson: The Art of Self-Realization Through Erotic Cinema"</p>
+        </div>
+        
+        <section id="featured-film">
+            <h2>NEW EXCLUSIVE RELEASE</h2>
+            <div class="vhs-effect">
+                <img src="images/films/featured.png" alt="The Astarion Chronicles" style="max-width:100%; display: block; margin: 0 auto; border: 1px solid #990033; box-sizing: border-box;">
+            </div>
+            <h3>"ABSOLUTE CINEMA: THE ASTARION CHRONICLES"</h3>
+            <p>Astarion's autobiographical magnum opus - a film about himself making a film about himself making films. Features a Russian doll structure of nested realities: the original film, the documentary about making the original film, and the biopic recreating both.</p>
+            <p style="color: #ff99cc; font-style: margin: 5px 0;"><small>"I'm not merely documenting my life - I'm transcending conventional narrative. This film exists at the intersection of memoir, meta-fiction, and the sublime erotic. Like Damiano's 'Deep Throat' revolutionized the genre by introducing plot to pornography, I intend to revolutionize it again by introducing meta-narrative complexity." - Astarion Ancunín.</small></p>
+            <a href="#trailer" class="btn">Production Materials</a>
+        </section>
+        
+        <section id="films">
+            <h2>POPULAR RELEASES</h2>
+            <div class="featured">
+                <div class="feature-item">
+                    <div class="vhs-effect">
+                        <img src="images/films/film1.png" alt="Film 1">
+                        <span class="new-banner">HIT!</span>
+                    </div>
+                    <h3>Nocturnal Emissions</h3>
+                  <p style="color: #b2477d; text-align: center; font-style: margin: 5px 0;">    </p>
+                    <p>A surreal, oneiric descent into lust, memory, and bodily possession. A nameless sleeper is trapped in an endless dream sequence, seduced by spectral lovers, shadow-figures, and possibly herself.</p>
+                  <p style="color: #ff99cc; font-style: margin: 5px 0;">"It's not a film. It's a wet hallucination left to ferment."</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="vhs-effect">
+                        <img src="images/films/film2.png" alt="Film 2">
+                    </div>
+                    <h3>The Moan Architect</h3>
+                  <p style="color: #b2477d; text-align: center; font-style: margin: 5px 0;">   </p>
+                    <p>An architect designs a mansion with no exits and hires six strangers to live inside. 90 minutes of fevered hallucinations, soft-focus orgies, and whispered French existentialism. No two people have seen the same version.</p>
+                    <p style="color: #ff99cc; font-style: margin: 5px 0;">"A sex-drenched riddle, wrapped in sweat, whispered by regret."</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="vhs-effect">
+                        <img src="images/films/film3.png" alt="Film 3">
+                    </div>
+                    <h3>Velvet Hunger: The Uncut Gospel</h3>
+                  <p style="color: #b2477d; text-align: center; font-style: margin: 5px 0;">    </p>
+                    <p>A bisexual saint is hunted by masked inquisitors through a labyrinthine monastery turned brothel. It's part giallo, part erotic passion play, part incoherent séance. There is a goat. It may be a metaphor.</p>
+                  <p style="color: #ff99cc; font-style: margin: 5px 0;">"The rare adult film that might actually save your soul while corrupting it."</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="news">
+            <h2>STUDIO NEWS</h2>
+            
+            <div class="news-item">
+                <div class="news-date">April 12, 2025</div>
+                <h3>Production Begins: ABSOLUTE CINEMA — The Astarion Chronicles</h3>
+                <p style="color: #ffcccb">Lights. Blood. Action.</p>
+                <p style="color: #ffcccb">We are ecstatic (and lightly delirious) to announce an unprecedented multi-layer documentary project chronicling the creation of Astarion's self-referential revolutionary magnum opus.</p>
+                
+                <input type="checkbox" id="news1" class="news-toggle">
+                <label for="news1" class="btn">READ</label>
+                
+                <div class="extended-content">
+                    <p>Written, directed, narrated, styled, and scored by Astarion himself, this cinematic manifesto will explore art, desire, power, narcissism, legacy, mirrors, leather, and the unbearable burden of being extremely watchable.</p>
+                    <p>The documentary team has been granted unprecedented access to all areas of production, with the sole exception of Astarion's personal dressing room between the hours of 3 and 4 AM, which he describes as his “vulnerability hour” and refuses to elaborate further on.</p>
+                    <p><i>- Crimson Ecstasy Productions</i></p>
+                    <p><i>“Cinema dies. We just f** the corpse.”</i></p>
+                </div>
+            </div>
+            
+            <div class="news-item">
+                <div class="news-date">March 28, 2025</div>
+                <h3>Things Beneath the Velvet: A Whispered Inventory</h3>
+                <p style="color: #ffcccb">A gentle reminder to our followers: if you felt something shift in your sleep last Thursday, that was us. The Vault has been reopened for cataloguing, and several “lost” reels have been accounted for - though some were found pulsing, and one appears to be alive.</p>
+                
+                <input type="checkbox" id="news2" class="news-toggle">
+                <label for="news2" class="btn">READ</label>
+                
+                <div class="extended-content">
+                    <p>The cataloguing process, overseen by our archivist Gale, has uncovered several fragments of unreleased material dating back to Astarion's earliest experimental period. These include a controversial three-hour “breathing study” featuring seven models simply existing in a candle-lit space, and the legendary missing scenes from “Velvet Hunger” that were reportedly too intense even for our most dedicated audience.</p>
+                    <p>“The Vault has yielded treasures beyond my wildest expectations,” Gale wrote in his daily log. “We've discovered an entire subseries of what Astarion refers to as his 'Nocturnes' - short, intensely intimate vignettes shot on expired 16mm film stock that seems to have developed sentience during storage.”</p>
+                    <p>We’ve also discovered a draft script scrawled across thirteen bar napkins titled “Tender Organs, Vol. I”. Authorship: unknown. Content: unspeakable. We’ve greenlit it.</p>
+                    <p>Thank you for your continued obsession.</p>
+                    <p>Remember: nothing you see on our sets is ever entirely staged.</p>
+                    <p><i>- Crimson Ecstasy Productions</i></p>
+                    <p><i>“We don’t film nightmares. We collaborate with them.”</i></p>
+                </div>
+            </div>
+            
+            <div class="news-item">
+                <div class="news-date">February 15, 2025</div>
+                <h3>The Emissions Return: Unearthed, Unrated, Unrepentant</h3>
+                <p style="color: #ffcccb">We are thrilled, aroused, and mildly legally compromised to announce that Nocturnal Emissions will be screened once again this year-one night only, unmarked location, whispered invitation only. If you know, you know. If you don't… dream harder.</p>
+                
+                <input type="checkbox" id="news3" class="news-toggle">
+                <label for="news3" class="btn">READ</label>
+                
+                <div class="extended-content">
+                    <p>The 35mm reels have been recovered from their vault (which doubled as an ex-lover’s mausoleum) and the restoration process is underway. Expect blood smudges, deliberate damage, and several frames the editors swear weren’t in the original cut. One reel reportedly groans when handled. We take this as a good sign.</p>
+                    <p>As always, we remain devoted to our vision:</p>
+                    <p>Excess. Ecstasy. Enigma.</p>
+                    <p>And maybe a little softcore possession.</p>
+                    <p>Stay tuned. Or don’t. It’ll find you either way.</p>
+                    <p><i>- Crimson Ecstasy Productions</i></p>
+                    <p><i>“Cinema for the damned and the divine.”</i></p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="crew">
+            <h2>ASTARION'S CREW</h2>
+            
+            <div style="text-align: center; margin-bottom: 40px;">
+                <div class="vhs-effect" style="display: inline-block; max-width: 400px;">
+                    <img src="images/crew/astarion.png" alt="Astarion" style="width: 100%; border: 3px solid #ff0066; box-sizing: border-box; display: block;">
+                </div>
+                <h3 style="font-size: 1.8em; margin-top: 15px;">ASTARION</h3>
+                <p style="font-size: 1.2em; color: #ff0066; margin-bottom: 5px;">Director, Visionary, Genius</p>
+                <p style="max-width: 600px; margin: 0 auto; color: #ffcccc;">Astarion doesn’t make films - he orchestrates visions. Each production is a lavish descent into erotic delirium, wrapped in velvet, soaked in metaphor, and lit like a Renaissance painting gone feral. He demands everything from his cast — blood, sweat, ecstasy — and gives them back immortality on screen.</p>
+              <p style="max-width: 600px; margin: 0 auto; color: #ffcccc;">Impossible to work with. Irresistible to follow.</p>
+                <p style=" margin: 10px auto; max-width: 600px; color: #ff99cc;">“Make love to the lens, darling. The audience is begging to be ruined.”</p>
+            </div>
+            
+            <div class="featured">
+                <div class="feature-item">
+                    <div class="vhs-effect">
+                        <img src="images/crew/karlach.png" alt="Karlach">
+                    </div>
+                    <h3>Karlach</h3>
+                  <p>Gaffer / Key Grip / Set Technician / Pyro Consultant</p>
+                    <p>Muscle, heart, and fire. Built half the set out of stolen theater scraps and pure willpower. If it lights up, moves, or nearly kills you, Karlach touched it. Perpetually draped in cables and running on a dangerous mixture of energy drinks and sheer force of will. Can fix anything with duct tape, WD-40, and terrifying competence.</p>
+                  <p style=" margin: 10px auto; max-width: 600px; color: #ff99cc;">“I didn't blow it up. It exploded on its own. That’s different.”</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="vhs-effect">
+                        <img src="images/crew/gale.png" alt="Gale">
+                    </div>
+                    <h3>Gale</h3>
+                  <p>Assistant Director / Line Producer / Accountant</p>
+                    <p>Half sage, half stage mom. Keeps track of time, budget, and what little remains of anyone’s sanity. Writes dramatic voiceovers for scenes no one asked for. Hates his spreadsheet. Hates loving it.</p>
+                  <p style=" margin: 10px auto; max-width: 600px; color: #ff99cc;">“The boundary between pornography and philosophy is merely a construct of repressed minds. Both seek to unveil truth through physical exploration.”</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="vhs-effect">
+                        <img src="images/crew/tav.png" alt="Tav">
+                    </div>
+                    <h3>Tav</h3>
+                  <p>Director of Photography / Camera Operator / Lighting Supervisor</p>
+                    <p>The calm eye in the storm of sex, smoke, and glitter. Runs on burnt coffee and deadpan stares. Has learned to adjust ISO, white balance, and personal expectations at the speed of chaos. Has seen things. Framed them beautifully. And enjoying every absurd minute. Can balance a 20-pound camera rig on one shoulder while flipping off Astarion with her free hand.</p>
+                  <p style=" margin: 10px auto; max-width: 600px; color: #ff99cc;">“Is this art? Is this porn? Does it matter? I just hit record.”</p>
+                </div>
+            </div>
+            
+            <div class="featured">
+                <div class="feature-item">
+                    <div class="vhs-effect">
+                        <img src="images/crew/shadowheart.png" alt="Shadowheart">
+                    </div>
+                    <h3>Shadowheart</h3>
+                   <p>Head of Makeup & Wardrobe / Style Supervisor</p>
+                    <p>If you look hot and haunted, it's her doing. If you look like a cryptid in lace - also her doing. Runs the only organized kit on set. Manages latex, lace, and latex stuck to lace. Judging everyone silently, while powdering genitals with divine detachment.</p>
+                  <p style=" margin: 10px auto; max-width: 600px; color: #ff99cc;">“My palettes range from 'midnight abyss' to 'darkest void.' There are seventy-eight distinct shades of darkness, and I use them all.”</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="vhs-effect">
+                        <img src="images/crew/wyll.png" alt="Wyll">
+                    </div>
+                    <h3>Wyll</h3>
+                  <p>Sound Engineer / Noise Suppression Specialist / Ethics Committee</p>
+                    <p>Carries a boom mic like a crusader. Censors breathy noises like a man possessed. Has PTSD from that one shoot involving syrup, stilts, and a haunted synth score.</p>
+                  <p style=" margin: 10px auto; max-width: 600px; color: #ff99cc;">“Please, I’m begging you: no more chains on tile floors.”</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="vhs-effect">
+                        <img src="images/crew/laezel.png" alt="Lae'zel">
+                    </div>
+                    <h3>Lae'zel</h3>
+                  <p>Intimacy Coordinator / Stunt Safety / Legal Consultant</p>
+                    <p>No one gets naked without her say-so. She runs the consent meetings like battlefield briefings. You’ll know the rules. You’ll fear the clipboard.</p>
+                  <p style=" margin: 10px auto; max-width: 600px; color: #ff99cc;">“Touch them without consent again, and I’ll staple your NDA to your forehead.”</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="about">
+            <h2>ABOUT THE STUDIO</h2>
+            <div class="vhs-effect">
+                <img src="images/studio.png" alt="Crimson Ecstasy Studios" style="max-width:100%; margin-bottom:20px; display: block; margin: 0 auto 20px; border: 1px solid #990033; box-sizing: border-box;">
+            </div>
+            <p>Crimson Ecstasy Productions emerged from Astarion's vision to transform adult cinema into legitimate art, reviving the artistic approach of 1970s erotic auteurs. Headquartered in a deconsecrated Gothic revival cathedral (acquired through means that studio lawyers have advised us not to disclose), our production house has quickly gained notoriety for pushing boundaries between the erotic and the existential.</p>
+            <p>Our aesthetic philosophy centers on what Astarion calls “The Crimson Principle” - the belief that true desire exists in the tension between fear and fascination. All our films explore this delicate balance, creating experiences that are simultaneously arousing and unnerving.</p>
+            <p>The studio facility features custom-designed soundstages, a proprietary lighting system that took three electrical engineers six months to perfect, and the largest collection of artisanal candles. Our fire insurance premiums alone account for 18% of our annual operating budget.</p>
+            <p>Visitors frequently remark on the building's unusual ambiance, described variously as “seductively oppressive,” “gothically arousing,” and “like being inside a sensual panic attack.” Tours are available by appointment, though all guests must sign extensive liability waivers and are advised not to wear synthetic fabrics due to the proximity of open flames.</p>
+        </section>
+        
+        <footer>
+          <section id="social-links">
+            <div class="social-links">
+                <a href="https://www.tumblr.com/lolthwoven">Tumblr</a>
+                <a href="#onlyfans">OnlyFangs</a>
+                <a href="https://archiveofourown.org/users/LolthWoven">AO3</a>
+                
+            </div>
+            <p><a href="quill.and.fangs@crimson-ecstasy.com" style="color: #ff0066; text-decoration: none;">quill.and.fangs@crimson-ecstasy.com</a></p>
+            <div class="newsletter">
+                <h3>Subscribe to our newsletter</h3>
+                <form>
+                    <input type="email" placeholder="Your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+            
+            <p>&copy; 2025 Crimson Ecstasy Productions. Adults only.</p>
+            <p>This is a fanfiction website based on Baldur's Gate 3 characters. All characters are fictional.</p>
+           
+        </footer>
+    </div>
+    <script>
+    function enterSite() {
+        document.getElementById('age-verification').style.display = 'none';
+    }
+    
+    function exitSite() {
+        window.location.href = 'https://www.google.com';
+    }
+</script>
 </body>
 </html>
